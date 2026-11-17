@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", system-ui, -apple-system, sans-serif;
+  --color-ink: #123B63;
+  --color-deep: #0B2A47;
+  --color-teal: #20B8A6;
+  --color-tealh: #36CBB9;
+  --color-tealtext: #0C7A6D;
+  --color-mist: #F2F7F9;
+  --color-line: #DBE6EC;
+  --color-body: #0F2233;
+  --color-muted: #5A7084;
+}
+
+@layer base {
+  html {
+    font-family: "Outfit", system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Focus ring accessibility */
+:focus-visible {
+  outline: 2px solid #20B8A6;
+  outline-offset: 2px;
+}
+
+/* Leaflet CERIM overrides */
+.cerim-map-pin {
+  background: transparent !important;
+  border: none !important;
+}
+
+.leaflet-container {
+  font-family: "Outfit", system-ui, -apple-system, sans-serif;
+}
+
+/* Neutral gray animated skeleton shimmer */
+@keyframes cerim-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.cerim-skeleton {
+  background-color: #e5e7eb;
+  background-image: linear-gradient(
+    90deg,
+    #e5e7eb 0%,
+    #f3f4f6 40%,
+    #e5e7eb 80%
+  );
+  background-size: 200% 100%;
+  animation: cerim-shimmer 1.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cerim-skeleton {
+    animation: none;
+    background-image: none;
+  }
+}
+

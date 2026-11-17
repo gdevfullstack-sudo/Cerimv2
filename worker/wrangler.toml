@@ -1,0 +1,22 @@
+
+name = "cerim-whatsapp-worker"
+main = "src/index.ts"
+compatibility_date = "2026-10-01"
+
+[vars]
+CANCELLATION_HOURS = "24"
+CLIENT_CONFIRM_MINUTES = "120"
+SUPPLIER_TIMEOUT_MINUTES = "30"
+ENCAISSEMENT_PAR = "CERIM"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "cerim_reservations"
+database_id = "751936e5-772c-4596-83ec-42e9960f696e"
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT_KV"
+id = "6c92ab2809534d098ea6b981dab7367f"
+
+[triggers]
+crons = ["*/5 * * * *"]
