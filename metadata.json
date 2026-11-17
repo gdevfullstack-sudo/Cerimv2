@@ -1,0 +1,6 @@
+{
+  "name": "CERIM — Location d'appartements et de voitures",
+  "description": "Plateforme de location d'appartements meublés et de voitures à Brazzaville et Pointe-Noire. Réservation sans paiement en ligne : vous payez à votre arrivée.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
